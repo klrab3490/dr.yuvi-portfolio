@@ -1,30 +1,23 @@
-// Import Modules
 import type { Metadata } from "next";
-import "@styles/globals.css";
-import Navbar from "@components/Navbar";
-import Footer from "@components/Footer";
-import { ThemeProvider } from "@components/darkmode/theme-provider";
+import { Inter } from "next/font/google";
+import "./globals.css";
+import Header from "@/components/Header";
 
-// Import font
-import { Sora } from "next/font/google";
-const sora = Sora({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-    title: "Dr.Yuvaraj Velusamy's Personal Website",
-    description: "Made to showcase my work and projects",
+    title: "Dr.Yuvaraj Velusamy | Personal Portfolio",
+    description: "Dr.Yuvaraj Velusamy | Personal Portfolio",
 };
 
 export default function RootLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
     return (
         <html lang="en">
-            <body className={sora.className}>
-                <ThemeProvider attribute="class" enableSystem>
-                    <Navbar />
-                    <div className="px-8 2xl:px-16">
-                        {children}
-                    </div>
-                    <Footer />
-                </ThemeProvider>
+            <body className={`${inter.className} relative pt-28 sm:pt-36 bg-gray-50 text-gray-950 h-[5000px]`}>
+                <div className="-z-10 bg-[#fbe2e3] absolute top-[-6rem] right-[11rem] h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[68.75rem]"></div>
+                <div className="-z-10 bg-[#dbd7fb] absolute top-[-1rem] left-[-35rem] h-[31.25rem] w-[50rem] rounded-full blur-[10rem] sm:w-[68.75rem] md:left-[-33rem] lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[-5rem]"></div>
+                <Header />
+                {children}
             </body>
         </html>
     );
