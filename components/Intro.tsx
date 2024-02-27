@@ -15,7 +15,7 @@ export default function Intro() {
             <div className="flex items-center justify-center text-center">
                 <div className='relative'>
                     <motion.div initial={{ opacity: 0 , scale: 0 }} animate={{ opacity: 1 , scale: 1 }} transition={{ type: "tween", duration: 0.2, }}>
-                        <Image src={Portrait} alt='Yuvaraj Portrait' width='192' height='192' quality='95' priority={true} className='h-24 w-24 rounded-full object-cover border-[0.35rem] border-white shadow-xl' />
+                        <Image src={Portrait} alt='Yuvaraj Portrait' width='192' height='192' quality='95' priority={true} className='h-48 w-48 rounded-full object-cover border-[0.35rem] border-white shadow-xl' />
                     </motion.div>
                     <motion.span initial={{ opacity: 0 , scale: 0 }} animate={{ opacity: 1 , scale: 1 }} transition={{ type: "spring", stiffness: 125, delay: 0.1, duration: 0.7 }} className='text-4xl absolute bottom-0 right-0'>👋</motion.span>
                 </div>
